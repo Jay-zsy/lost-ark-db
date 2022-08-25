@@ -5,15 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:reset": "node src/db/resetDatabase.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/express": "^4.17.13",
-    "@types/node": "^18.7.7",
-    "@types/pg": "^8.6.5",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
@@ -25,6 +24,10 @@
     "ws": "^8.8.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.7.11",
+    "@types/pg": "^8.6.5",
     "@types/ws": "^8.5.3"
   }
 }
