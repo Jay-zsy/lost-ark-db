@@ -10,7 +10,7 @@ export const engravingsRoutes = (client: Client) => {
       SELECT * FROM engravings
       WHERE type = 'MALICE'
       `
-    ).then(result => res.json(result));
+    ).then(({ rows }) => res.json(rows));
   });
   router.get("/engravings/class", (req, res) => {
     client.query(
@@ -18,7 +18,7 @@ export const engravingsRoutes = (client: Client) => {
       SELECT * FROM engravings
       WHERE type = 'CLASS'
       `
-    ).then(result => res.json(result));
+    ).then(({ rows }) => res.json(rows));
   });
   router.get("/engravings/common", (req, res) => {
     client.query(
@@ -26,7 +26,14 @@ export const engravingsRoutes = (client: Client) => {
       SELECT * FROM engravings
       WHERE type = 'COMMON'
       `
-    ).then(result => res.json(result));
+    ).then(({ rows }) => res.json(rows));
+  });
+  router.get("/engravings", (req, res) => {
+    client.query(
+      `
+      SELECT * FROM engravings
+      `
+    ).then(({ rows }) => res.json(rows));
   });
 
   return router;

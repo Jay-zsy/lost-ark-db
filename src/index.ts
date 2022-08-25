@@ -3,7 +3,7 @@ import { WebSocketServer } from 'ws';
 
 import { application } from './application';
 import { ENV } from './environment';
-// console.log('from the index: ', process.env)
+
 const PORT = process.env.PORT || 6001;
 const server = new Server(application(ENV));
 
