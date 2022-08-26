@@ -6,6 +6,7 @@ export const client = new Client({
   password: process.env.PGPASSWORD,
   host: process.env.PGHOST,
   database: process.env.PGDATABASE,
+  ssl: true,
 });
 
 client.connect().catch(e => console.log(`Error connecting to Postgres server while in ${ENV} environment:\n${e}`));
